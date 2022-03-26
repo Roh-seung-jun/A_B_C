@@ -7,6 +7,25 @@ let inter =  null;
 $(()=>{
     cardSet();
     $(document)
+        .on('click','.file_add',function(){
+            const text = `<input type="file" class="form-control-file file-input" name="file">`;
+            $('.file-div').append(text);
+        })
+        .on('click','.review_submit',function(e){
+            const name = $('input[name="name"]').val();
+            if(name.length < 2)return alert('이름은 2자 이상이여야 합니다.');
+            if(name.length > 50)return alert('이름은 50자 이하여야 합니다.');
+            const contents = $('textarea').val();
+            if(contents.length < 100)return alert('100자 이상이여야 합니다.');
+            return alert('후기가 정상적으로 등록되었습니다.');
+        })
+        .on('mousemove','.star input',function(e){
+            $(this).val(Math.floor(e.offsetX/15));
+            document.querySelector('.star span').style.width = `${this.value * 10}%`;
+        })
+        .on('click','.write_review',()=>{
+            $('#review_modal').modal('show');
+        })
         .on('keydown keyup onpaste','input[name="phone"]',function(){
             let val = $(this).val();
             if(val.length > 13){
