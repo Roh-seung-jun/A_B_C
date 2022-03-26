@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/script.js"></script>
+</head>
+<body>
+<input type="radio" name="menu" class="d-none" id="open" >
+<input type="radio" name="menu" class="d-none" id="close" checked="">
+<input type="checkbox" name="icon" class="d-none" id="icon">
+<div class="position-fixed d-flex menu_bar h-100">
+    <div class="icon position-relative">
+        <label for="open" class="m-0 position-absolute menu_open type_menu d-flex justify-content-center align-items-center"><img src="./소셜아이콘/menu.png" alt=""></label>
+            <label for="close" class="m-0 position-absolute menu_close type_menu d-flex justify-content-center align-items-center"><img src="./소셜아이콘/close.png" alt=""></label>
+            <label for="icon" class="icon_label icon_menu position-absolute d-flex justify-content-center align-items-center"><img src="./소셜아이콘/share.png" alt=""></label>
+            <label class="icon_label icon_1 icon_img position-absolute d-flex justify-content-center align-items-center"><img src="./소셜아이콘/icon1.png" alt=""></label>
+            <label class="icon_label icon_2 icon_img position-absolute d-flex justify-content-center align-items-center"><img src="./소셜아이콘/icon2.png" alt=""></label>
+            <label class="icon_label icon_3 icon_img position-absolute d-flex justify-content-center align-items-center"><img src="./소셜아이콘/icon3.png" alt=""></label>
+    </div>
+    <div class="menu d-flex flex-column justify-content-center align-baseline text-center">
+        <a href="./index.html"><p>Home (홈)</p></a>
+        <a href="./sub_1.html"><p>특산품 안내</p></a>
+        <a href="./sub_2.html"><p>이벤트</p></a>
+        <a href="./sub_3.html"><p>구매후기</p></a>
+    </div>
+</div>
+<img src="./사진/photo%20(3).jpg" alt="" class="position-fixed background">
+<section class="event event_section d-flex justify-content-center align-items-center flex-column">
+    <img src="./사진/event_.png" alt="">
+    <div class="stamp">
+        <img src="./사진/stamp-0.png" alt="">
+    </div>
+    <div class="button_tap d-flex w-25 justify-content-between align-items-end mb-2">
+        <div class="count m-2">
+            <p>찾은 카드 수 : 0</p>
+        </div>
+        <div class="button">
+            <button class="btn btn-outline-light m-3 start">게임시작</button>
+            <button class="btn btn-outline-light m-3 d-none reload">다시시작</button>
+            <button class="btn btn-outline-light m-3 hint">힌트보기</button>
+        </div>
+        <div class="time m-2">
+            <p>1분 30초</p>
+        </div>
+    </div>
+    <div class="card_game d-flex justify-content-center flex-wrap align-items-center">
+
+    </div>
+</section>
+<div class="modal fade" id="modal_card">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>이벤트 참여</h3>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <p class="m-0">이름</p>
+                    <input type="text" name="name" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <p class="m-0">전화번호</p>
+                    <input type="text" name="phone" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <p class="m-0">점수</p>
+                    <input type="number" name="score" class="form-control" readonly="">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline-secondary close">닫기</button>
+                <button class="btn btn-outline-primary card_submit">참여</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<div class="position-absolute copy text-center main_copy">-->
+<!--    <p class="m-0">Copyright (C) Gyeongsangbuk-do.All Rights Reserved.</p>-->
+<!--</div>-->
+</body>
+</html>
