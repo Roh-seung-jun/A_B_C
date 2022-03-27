@@ -1,0 +1,276 @@
+*{margin: 0;padding: 0;box-sizing: border-box;letter-spacing: -0.04rem}
+ul, li{list-style: none;}
+a{text-decoration: none;color: #fff;}
+body{overflow-x: hidden}
+/*menu*/
+.menu_bar{
+    z-index: 99;
+    left: 100%;
+    margin-left: -330px;
+    transition: .4s;
+}
+.menu_bar .type_menu ,.icon_menu{
+    background:#000;
+    width: 30px;
+    height: 150px;
+}
+.menu_bar .type_menu{
+    height: 150px;
+}
+.menu_bar h1{
+    font-size:5rem;
+}
+.menu{
+    color: #ccc;
+    width: 300px;
+    height: 100%;
+    background: #333;
+}
+
+/*icon*/
+.icon{margin-top: 80px;overflow-x: hidden;width: 30px;}
+
+.icon_label{
+    margin-top: 170px;
+    height: 40px;
+}
+.icon_label img{
+    width: 20px;
+    height: 20px;
+}
+
+.menu_bar label{
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+    opacity: 1;
+    transition: .4s;
+}
+
+.icon_1{margin-top: 220px;background: #e4606d;}
+.icon_2{margin-top: 270px;background: #005cbf;}
+.icon_3{margin-top: 320px;background: red;}
+.icon_img{
+    opacity: 0;
+    overflow-x:hidden;
+    width: 0;
+    margin-left: 30px;
+    transition: .4s;
+}
+
+#icon:checked ~ .menu_bar .icon_img{
+    width: 30px;
+    margin-left: 0;
+    padding-right: 70px;
+}
+#icon:checked ~ .menu_bar .icon_1{animation: event .5s;animation-delay: .5s}
+#icon:checked ~ .menu_bar .icon_2{animation: event .5s;animation-delay: 1s}
+#icon:checked ~ .menu_bar .icon_3{animation: event .5s;animation-delay: 1.5s}
+
+
+@keyframes event {
+    0%{width: 10px;}
+    50%{width: 10px;}
+    100%{width: 10px;}
+}
+
+
+/*main*/
+.main{
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+.main .visual{
+    width: 33.333%;
+    transition: 1s;
+}
+.main .visual img{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    transition: 1s;
+    filter:brightness(80%);
+}
+.main .visual:hover{
+    width: 60%;
+}
+.main .visual:hover img{
+    filter: brightness(60%);
+}
+.img_1{opacity: 1;z-index: 1;}
+.img_2{opacity: 0;z-index: 0;}
+.img_1:hover{opacity: 0;}
+.img_1:hover ~ .img_2{opacity: 1;}
+
+.main .text{z-index: 3;color: #fff;transition: 1s;height: 160px;text-align: center;width: 70%;}
+.main .text button{margin-top: 60px;animation: move 1s infinite;}
+.main .text h1{font-size: 4rem;opacity: .4;margin-top: -20px;}
+.main .text h2{padding-bottom: 10px;}
+.main .text p{font-size:1.1rem;padding-top:10px;color: #ccc}
+.main .visual:hover .text{height: 400px;}
+.main .text .contents{opacity: 0;transition: .5s}
+.main .visual:hover .contents{opacity: 1;transition: 2s}
+
+.copy{top: 97%;left: 50%;z-index: 100;color: #ccc;}
+.main_copy{transform: translate(-50%,-50%);}
+.letter {letter-spacing: 1rem;}
+
+@keyframes move {
+    0%{margin-top: 60px}
+    50%{margin-top: 50px}
+    100%{margin-top: 60px}
+}
+/*event*/
+#open:checked ~ .menu_bar .menu_open{
+    opacity: 0;
+    z-index: -1;
+}
+#close:checked ~.menu_bar{
+    margin-left: -30px;
+}
+#close:checked ~ .menu_bar .menu_close{
+    opacity: 0;
+    z-index: -1;
+}
+#icon:checked ~ .menu_bar .icon_img{
+    width: 100px;
+}
+
+/*sub*/
+.event_section{
+    color: #fff;
+}
+.list{
+    width: 80%;
+    margin-top: 30px;
+}
+.under_bar{
+    border-bottom: 2px solid #aaa;
+}
+.score{color: #f5f55e;}
+.gray{color:#aaa}
+section .box{
+    width: 450px;
+    height: 240px;
+    border: 1px solid #333;
+    border-radius: 15px;
+    transition: .4s;
+    box-shadow: 0 0 0 0;
+    background: rgba(9, 0, 0, 0.62);
+}
+section .box:hover{;
+    box-shadow: 0 0 1px 1px #533f03;
+
+}
+.box img{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+img.background{
+    width: 100vw;
+    height: 100vh;
+    filter: brightness(50%);
+    object-fit: cover;
+    z-index: -128;
+}
+.review {
+    left: 90%;
+    top: 90%;
+    width: 100px;
+    height: 30px;
+    color: #fff;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, .3);
+    padding-top: 3px;
+}
+
+.card{
+    perspective: 200px;
+    transition: all 1s;
+    background: rgba(0,0,0,0);
+    width: 150px;
+    height: 200px;
+    border: none;
+    border-radius: 20px;
+    color: #ccc;
+    margin: 5px 10px;
+
+}
+.card_3d{
+    transform-style: preserve-3d;
+    transition: all 1s;
+}
+.card img{
+    width: 160px;
+    height: 210px;
+}
+
+.front{backface-visibility: hidden;transform: rotateY(0);border-radius: 20px;overflow: hidden; background: repeating-linear-gradient(45deg, #1b2556, #1b2556 10px, #000000 0, #000000 20px);}
+.back{backface-visibility: hidden;transform: rotateY(180deg);border-radius: 20px;overflow: hidden;}
+.change{transform: rotateY(180deg)}
+.end{transform: rotateY(180deg);}
+
+.card_game{
+    width: 800px;
+    height: 800px;
+}
+.long{
+    height: 2000px;
+}
+.card p{
+    background-color: rgba(0,0,0,.3);
+}
+
+.button_tap{
+    border-radius: 10px;
+    background-color: rgba(0,0,0,.3);
+}
+
+.svg{
+    filter:drop-shadow(5px 5px 0 #000);
+    object-fit: contain;
+    width: 1000px;
+    height: 700px;
+}
+path{
+    transition: .4s;
+}
+.path_event:hover{
+    fill: #031800;
+}
+.path_event:hover > path {
+    fill: #031800;
+}
+
+.path_1:hover ~ .path_1{display: block !important;animation: opa .4s forwards}
+.path_2:hover ~ .path_2{display: block !important;animation: opa .4s forwards}
+.path_3:hover ~ .path_3{display: block !important;animation: opa .4s forwards}
+.path_4:hover ~ .path_4{display: block !important;animation: opa .4s forwards}
+.path_5:hover ~ .path_5{display: block !important;animation: opa .4s forwards}
+.path_6:hover ~ .path_6{display: block !important;animation: opa .4s forwards}
+.path_7:hover ~ .path_7{display: block !important;animation: opa .4s forwards}
+.path_8:hover ~ .path_8{display: block !important;animation: opa .4s forwards}
+.path_9:hover ~ .path_9{display: block !important;animation: opa .4s forwards}
+.path_10:hover ~ .path_10{display: block !important;animation: opa .4s forwards}
+.path_11:hover ~ .path_11{display: block !important;animation: opa .4s forwards}
+.path_12:hover ~ .path_12{display: block !important;animation: opa .4s forwards}
+.path_13:hover ~ .path_13{display: block !important;animation: opa .4s forwards}
+.path_14:hover ~ .path_14{display: block !important;animation: opa .4s forwards}
+.path_15:hover ~ .path_15{display: block !important;animation: opa .4s forwards}
+.path_16:hover ~ .path_16{display: block !important;animation: opa .4s forwards}
+.path_17:hover ~ .path_17{display: block !important;animation: opa .4s forwards}
+.path_18:hover ~ .path_18{display: block !important;animation: opa .4s forwards}
+.path_19:hover ~ .path_19{display: block !important;animation: opa .4s forwards}
+
+foreignObject:hover{display: block !important;animation:  opa .4s forwards}
+@keyframes opa {
+    0%{opacity: 0}
+    100%{opacity: 1}
+}
+.list_item{
+    margin: 0;
+}
+.active{
+    color: #49ffa5;
+}
